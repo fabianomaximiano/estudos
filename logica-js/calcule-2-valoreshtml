@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercicio One</title>
+	<!-- Última versão CSS compilada e minificada -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Tema opcional -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Última versão JavaScript compilada e minificada -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<div class="row">
+				<h2>Calcule os numeros</h2>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<div class="row">
+				<h3>Escolha os numeros:</h3>
+				<form name="calculadora">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="valor">Valor um: </label>
+								<input type="text" class="form-control" name="v1" id="v1" placeholder="valor 1">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+						<label for="select-opçao">Selecione uma opçao de calculo:</label>
+						<select class="form-control" name="calcular" id="calcular">
+								<option value="+">Somar</option>
+								<option value="-">Subtrair</option>
+								<option value="*">Multiplicar</option>
+								<option value="/">Divisão</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="exampleInputEmail1">valor dois:</label>
+							<input type="text" class="form-control" name="v2" id="v2" placeholder="valor 2">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

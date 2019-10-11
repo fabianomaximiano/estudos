@@ -1,0 +1,36 @@
+* {
+padding:0;
+margin:0;
+vertical-align:baseline;
+list-style:none;
+border:0
+}
+body{
+	background: #000;
+	font-family: arial, "helvetica", sans-serif;
+	color: #fff;
+}
+.span{
+	background: #ff0;
+	padding: 5px 15px;
+	border-radius: 4px;
+	display: inline-block;
+	color: #000;
+}
+p{
+	margin: 5px 0px;
+	padding: 5px;
+}
+
+.texto_amarelo{
+	color: #ff0;
+}
+.bold{
+	font-weight: bold;
+	/*color: cyan;*/
+}
+
+input.form-control[type="number"]{
+	background-color: rgba(0,255,0,0.3);
+	color: #fff;
+}

@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<style type='text/css'>
+</style>
+<html>
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+  <title>Configuração</title>
+  <script type="text/javascript">
+     function pegarDataAtual(){
+        data = new Date();
+        mes = data.getMonth() + 1;
+        document.getElementById('data').value = data.getDate() + '/' + mes + '/' + data.getFullYear();
+    }
+</script>
+
+<style type="text/css">
+
+    body{
+        padding: 10px;
+        margin: 10px;
+        background: #BDC3C7;
+        font-family: "arial", helvetica, sans-serif;
+    }
+    fieldset{
+        padding: 10px 10px;
+        border-radius: 6px;
+        margin: 4px;
+        background-color: #E5E7E9;
+        box-shadow:5px 3px 3px #909497; 
+    }
+    .geral{
+        width: 100%;
+        float: left;
+    }
+    .linha{
+        width:45%; 
+        float: left;
+        border-radius: 6px;
+        margin: 3px 3px;
+    }
+    .linha-completa{
+        width: 90%;
+        padding: 5px;
+    }
+    input{
+        width: 80%;
+        padding: 9px 0px;
+        margin: 4px 2px;
+        border-radius: 4px;
+    }
+    input[type="radio" i], [type="checkbox" i]{
+        width: 10px;
+    }
+    input[type="submit" i]{
+        width: 93px;
+        border-radius: 6px;
+        background-color: 
+    }
+</style>
+</head>
+<body onload='pegarDataAtual()'>
+  <h1>CONFIGURAÇÃO</h1>
+  <p>ENTRE COM OS DADOS DE CONFIGURAÇÃO</p>
+
+  <form action='/' methd='POST'>
+    <div class="geral">
+        <div class="linha">
+            <fieldset>
+                Nome da rede:<BR /><input type='text' name='ssid'>
+            </fieldset>
+        </div>
+        <div class="linha">
+            <fieldset>
+                Senha da rede:<BR /><input type='text' name='senha'>
+            </fieldset>
+        </div>
+        <!-- 2ª linha -->
+        <div class="linha">
+            <fieldset>
+                Tipo sensor 01:<BR />
+                <input type='radio' name='tipo_01' value='ligdes'>Ligado/Desligado</input>
+            </fieldset>
+        </div>
+        <div class="linha">
+            <fieldset>
+                <br>
+                <input type='radio' name='tipo_01' value='dht'>DHT-22</input>
+                
+            </fieldset>
+        </div>
+        <div class="linha">
+         <fieldset>
+            Nome para o Sensor 1:<BR />
+            <input type='text' name='nome_01'>
+            <input type='checkbox' name='ativo_01'>Ativo</input>
+        </fieldset>
+    </div>
+    <div class="linha">
+        <fieldset>
+            Valor para alerta Sensor 01:<BR />
+            <input type='number' name='alerta_01'>
+        </fieldset>
+    </div>
+    <!-- 3ª linha -->
+    <div style="clear: both;"></div>
+    <div class="linha">
+        <fieldset>Tipo sensor 02:<BR />
+            <input type='radio' name='tipo_02' value='ligdes'>Ligado/Desligado</input></fieldset>
+        </div>
+        <div class="linha">
+            <fieldset><br>
+                <input type='radio' name='tipo_02' value='dht'>DHT-22</input>
+            </fieldset>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="linha">
+            <fieldset>
+               Nome para o Sensor 02:<BR />
+               <input type='text' name='nome_02'>
+               <input type='checkbox' name='ativo_01'>Ativo</input>
+           </fieldset>
+       </div>
+       <div class="linha">
+        <fieldset>
+            Valor para alerta Sensor 02:<BR />
+            <input type='number' name='alerta_02'><BR />
+        </fieldset>
+    </div>
+    <div style="clear: both;">
+        <div class="linha-completa">
+            <fieldset>
+                Nome para este Sensor Set:<BR />
+                <input type='text' name='nome'>
+            </fieldset>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="linha">
+            <fieldset>
+                Telegram BOT TOKEN:<BR />
+                <input type='text' name='token'>
+            </fieldset>
+        </div>
+        <div class="linha">
+            <fieldset>
+             Telegram ChatID:<BR />
+             <input type='text' name='chat'> 
+         </fieldset>
+     </div> 
+     <div style="clear: both;"></div>
+     <div class="linha-completa">
+        <fieldset>
+           <input type='text' id='data' name='data'></input>
+       </fieldset>
+   </div>
+   <center>
+    <input type='submit' value='Salvar'>
+</center>
+</div>
+</form>
+            <!--
+                
+                    
+                 
+                </fieldset>
+                <fieldset>
+				    Nome para este Sensor Set:<BR />
+                    <input type='text' name='nome'><BR /><BR />
+				    Telegram BOT TOKEN:<BR />
+                    <input type='text' name='token'><BR /><BR />
+				    Telegram ChatID:<BR />
+                    <input type='text' name='chat'><BR /><BR />
+                </fieldset>
+                <input type='text' id='data' name='data'>
+                <BR />
+                <center>
+                    <input type='submit' value='Salvar'>
+                </center>
+            </form>-->
+
+        </body>
+        </html>
