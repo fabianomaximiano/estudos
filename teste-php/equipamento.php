@@ -1,45 +1,59 @@
 <!-- inclusao arquivos do cabeçalho -->
 <?php include 'include/layout/header.php' ?>
 <?php include 'include/conexao/conexao.php';?>
-<?php include 'include/banco/banco-cadastro.php'; ?>
+<?php include 'include/banco/banco-equipamento.php'; ?>
 
 <div id="main">
 	<div class="container">
 		<h2 class="h2">Cadastro inventario - Departamento TI</h2>
 		<hr>
-		<form id="formPessoa" action="cadastra.php" method="POST">
+		<form id="formEquipamento" action="cadEquipamento.php" method="POST">
 			
 			<h3 class="h3">Dados do equipamento utilizado colaborador:</h3>
 
 			<div class="form-group">
 				<label for="nomeEstacao">Informar nome da estação</label>
-				<input type="text" class="form-control" id="nomeEstacao" placeholder="Informe o Nome da maquina para identificação na rede">
+				<select id="nomeEstacao" name="nomeEstacao" class="form-control">
+					<?php 
+
+							/*
+							 * Esta linha é responsavel por listar sistema operacional;
+							 */
+							$resultado = mysqli_query($con, "select * from equipamento");
+							while($codEquipamento = mysqli_fetch_assoc($resultado)){ ?>
+							<option value="<?=$codEquipamento['nomeEstacao'];?>">
+								<?= $codEquipamento['nomeEstacao'];?>
+							</option>
+							<?php } ?>  
+
+							?>
+					</select>
 			</div>
 			<div class="form-group">
 				<label for="numeroIP">Informar IP fixo da estação</label>
-				<input type="text" class="form-control" id="numeroIP" placeholder="Informe o numero IP fixo da estação">
+				<input type="text" class="form-control" id="numeroIP" name="numeroIP" placeholder="Informe o numero IP fixo da estação">
 			</div>
 			<div class="form-group">
 				<label for="dominio">Informar Dominio da rede</label>
-				<input type="text" class="form-control" id="dominio" placeholder="Informe o nome do Dominio da rede">
+				<input type="text" class="form-control" id="dominio" name="dominio" placeholder="Informe o nome do Dominio da rede">
 			</div>
 			<div class="form-group">
 				<label for="numeroSerie">Informar nº de serie da estação</label>
-				<input type="text" class="form-control" id="numeroSerie" placeholder="Informe o numero de serie da estação">
+				<input type="text" class="form-control" maxlength="8" id="numeroSerie" name="numeroSerie" placeholder="Informe o numero de serie da estação">
 			</div>
 			<div class="form-group">
 				<label for="nomeFabricante">Informar nome do fabricante da estação</label>
-				<input type="text" class="form-control" id="nomeFabricante" placeholder="Informe o nome do fabricante estação">
+				<input type="text" class="form-control" id="nomeFabricante" name="nomeFabricante" placeholder="Informe o nome do fabricante estação">
 			</div>
 			<div class="form-group">
 				<label for="tipoHardware">Informar tipo de Hardware</label>
-				<input type="text" class="form-control" id="tipoHardware" placeholder="Informe o numero de serie da estação">
+				<input type="text" class="form-control" id="tipoHardware" name="tipoHardware" placeholder="Informe o numero de serie da estação">
 			</div>
 			<hr>
 			<h3 class="h3">Sistema operacional e  anti virus da estação</h3>
 			<div class="form-group">
 				<label for="sOperacional">Informar Sistema Operacional</label>
-				<select id="sOperacional" class="form-control">
+				<select id="sOperacional" name="sOperacional" class="form-control">
 					<?php 
 
 							/*
@@ -56,8 +70,8 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="chaveSo">Informar Chave do S.O</label>
-						<select id="chaveSO" class="form-control">
+						<label for="codSO">Informar Chave do S.O</label>
+						<select id="codSO" name="codSO" class="form-control">
 							<?php 
 							/*
 							 * Esta linha é responsavel por listar chaveSO;
@@ -72,8 +86,8 @@
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="Antivirus">Informar Antivirus</label>
-						<select id="antivirus" class="form-control">
+						<label for="codAntivirus">Informar Antivirus</label>
+						<select id="codAntivirus" name="codAntivirus" class="form-control">
 							<?php 
 					/*
 							 * Esta linha é responsavel por listar antivirus;

@@ -1,5 +1,6 @@
-<?php include 'conexao/conecta.php'; ?>
-<?php include 'bancoPessoa.php'; ?>
+<?php include 'include/layout/header.php'; ?>
+<?php include 'include/conexao/conexao.php'; ?>
+<?php include 'include/banco/banco-cadastro.php'; ?>
 
 
 
@@ -8,10 +9,10 @@
  * script responsavel por indentificar itens a ser removido do sistema;
  */
 
-$id = $_POST['codPessoa'];
+$id = $_POST['codigo'];
 //print_r($id);
 //die;
-removePessoa($con, $id);
-header("location: pessoaLista.php?removido=true");
+removeUsuarios($con, $id);
+header("location: listar.php?removido=true");
     die();
 ?>

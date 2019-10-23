@@ -20,19 +20,20 @@
 				$codEquipamento     = $_POST['codEquipamento'];
 				
 
-				echo "<div class='container'>";
-				echo "<b>Variaveis do formulario com dados capiturados</b></br>";
-				echo $nome ."</br>";
-				echo $email."</br>";
-				echo $nomeUsuario."</br>";
-				echo $codDepartamento."</br>";
-				echo $codEquipamento."</br>";
-				echo "</div>";
+				// echo "<div class='container'>";
+				// echo "<b>Variaveis do formulario com dados capiturados</b></br>";
+				// echo $nome ."</br>";
+				// echo $email."</br>";
+				// echo $nomeUsuario."</br>";
+				// echo $codDepartamento."</br>";
+				// echo $codEquipamento."</br>";
+				// echo "</div>";
 
 				
-				if(inserirUsuarios($nome, $nomeUsuario, $email, $codDepartamento, $codEquipamento)){ ?>
+				if(inserirUsuarios($con, $nome, $nomeUsuario, $email, $codDepartamento, $codEquipamento)){ ?>
 
 				<p class="alert-success">Colaborador <?= $nome ?>, <?= $nome ?> foi cadastrado.</p>
+				<?php header("location:equipamento.php"); ?>
 
 				<?php }else { ?>
 				    <p class="alert-danger">Colaborador <?= $nome ?>, não foi cadastrado!</p>

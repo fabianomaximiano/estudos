@@ -1,10 +1,12 @@
 <?php 
 include 'include/layout/header.php'; 
-include 'conexao/conecta.php';
-include 'bancoPessoa.php'; 
+include 'include/conexao/conexao.php';
+include 'include/banco/banco-cadastro.php'; 
 
-$id = $_POST['id'];
-$pessoas = buscaPessoa($con, $id);
+$id = $_POST['codigo'];
+//	print_r($id);
+//die;
+$usuario = buscaUsuario($con, $id);
 
 ?>
 
@@ -15,24 +17,17 @@ $pessoas = buscaPessoa($con, $id);
 			<?php 
 
 			
-			$nomePessoa     = $_POST['nomePessoa'];
-			$emailPessoa    = $_POST['emailPessoa'];
-			$codSexo        = $_POST['codSexo'];
-			$rgPessoa       = $_POST['rgPessoa'];
-			$cpfPessoa      = $_POST['cpfPessoa'];
-			$celularPessoa  = $_POST['celularPessoa'];
-			$TelefonePessoa = $_POST['TelefonePessoa'];
-			$enderecoPessoa = $_POST['enderecoPessoa'];
-			$numeroPessoa   = $_POST['numeroPessoa'];
-			$bairroPessoa   = $_POST['bairroPessoa'];
-			$cepPessoa      = $_POST['cepPessoa'];
-			$cidadePessoa   = $_POST['cidadePessoa'];
-			$ufPessoa       = $_POST['ufPessoa'];
+			// variaveis  tabela: usuarios
+				$nome   			= $_POST['nome'];
+				$nomeUsuario    	= $_POST['nomeUsuario'];
+				$email          	= $_POST['email'];
+				$codDepartamento    = $_POST['codDepartamento'];
+				$codEquipamento     = $_POST['codEquipamento'];
 			
-			if(alterarPessoa($con, $id, $nomePessoa, $emailPessoa, $codSexo, $rgPessoa, $cpfPessoa, $celularPessoa, $TelefonePessoa, $enderecoPessoa, $numeroPessoa, $bairroPessoa, $cepPessoa, $cidadePessoa, $ufPessoa)){ ?>
-			<p class="bg-success">Tipo de Usaurios <?= $nomePessoa ?> foi alterada.</p>
+			if(altUsuarios($con, $id, $nome, $nomeUsuario, $email, $codDepartamento, $codEquipamento)){ ?>
+			<p class="bg-success">O Usaurio <?= $nome ?> foi alterada.</p>
 			<?php }else { ?>
-			<p class="bg-danger">Tipo de Usaurios <?= $nomePessoa ?>, não foi alterada!</p>
+			<p class="bg-danger">O Usaurios <?= $nome ?>, não foi alterada!</p>
 			<?php
 		}
 		?>
