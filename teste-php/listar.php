@@ -51,8 +51,7 @@ if (array_key_exists("removido", $_GET) && $_GET["removido"] == "true") {
 							<input type="hidden" name="codigo" value="<?= $usuario['codigo'];?>">
 							<button class="btn btn-danger">Remover</button>
 						</form>              
-					</td>
-					echo 
+					</td> 
 					<td><a class="btn btn-success" href="alterarusuario.php?id=<?= $usuario['codigo'] ?>">Editar</a></td>
 
 				</tr>
